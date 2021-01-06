@@ -1,0 +1,20 @@
+
+.image-header {
+    width: 100%;
+    height: auto;
+}
+.description {
+    margin-left: 1vw;
+}
+.detail {
+    display: inline-block;
+    margin: 5px 20px 5px 20px;
+    mat-icon {
+        font-size: 32px;
+    }
+    span {
+        position: relative;
+        bottom: 0.6em;
+        left: 2.5vh;
+    }
+}

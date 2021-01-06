@@ -1,0 +1,31 @@
+<mat-card class="card">
+    <mat-grid-list cols="3" rowHeight="100">
+        <mat-grid-tile>
+            <img mat-card-image src="{{ API_URL }}/{{ data.images.full }}" />
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="list-container">
+                <h4 class="title">{{ data.title }}</h4>
+                <h5 matRipple class="description" color="primary" [routerLink]="['/recipe', data.uuid]"><b>Read
+                        More...</b></h5>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="detail-container">
+                <div class="detail" [matTooltip]="'Serves for ' + data.servings">
+                    <p>Serves</p>
+                    <span>
+                        <mat-icon color="warn">groups</mat-icon>
+                    </span>
+                </div>
+                <br />
+                <div class="detail" [matTooltip]="'Cooking Time: ' + data.cookTime">
+                    <p>Time</p>
+                    <span>
+                        <mat-icon color="warn">watch</mat-icon>
+                    </span>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>

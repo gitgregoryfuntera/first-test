@@ -1,0 +1,11 @@
+<div class="page-container">
+    <div *ngIf="isLoading; else showContent;">
+        <mat-spinner class="spinner-preloader"></mat-spinner>
+    </div>
+    <ng-template #showContent>
+        <h1 class="title">Recipes</h1>
+    <div class="recipe-container" *ngFor="let recipe of recipes">
+        <app-recipe-card [data]="recipe"></app-recipe-card>
+    </div>
+    </ng-template>
+</div>

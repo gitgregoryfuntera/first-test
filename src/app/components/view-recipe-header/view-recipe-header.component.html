@@ -1,0 +1,27 @@
+<div class="header">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{ data.title }}</mat-card-title>
+            <mat-card-subtitle>{{ data.postDate }}</mat-card-subtitle>
+          </mat-card-header>
+            <img mat-card-image src="{{ API_URL }}/{{data.images.full}}">
+          <mat-card-content>
+            <h2 class="description">{{data.description}}</h2>
+          </mat-card-content>
+          
+          <mat-card-actions>
+            <div class="detail">
+                <mat-icon color="warn">watch</mat-icon>
+                <span><b>Cook Time: {{ data.cookTime }}</b></span>
+            </div>
+            <div class="detail">
+                <mat-icon color="warn">groups</mat-icon>
+                <span><b>Servings: {{ data.servings }}</b></span>
+            </div>
+            <div class="detail">
+                <mat-icon color="warn">outdoor_grill</mat-icon>
+                <span><b>Prep. Time: {{ data.prepTime }}</b></span>
+            </div>
+          </mat-card-actions>
+    </mat-card>
+</div>

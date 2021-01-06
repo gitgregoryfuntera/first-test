@@ -1,0 +1,65 @@
+.ingredients-container, .directions-container {
+    margin-top: 1vh;
+}
+
+.expansion-title {
+    position: relative;
+    top: 0.5vh;
+    left: 0.5vh;
+}
+.specials-container:hover {
+    cursor: pointer;
+}
+
+.specials-title {
+    position: relative;
+    bottom: 0.5vh;
+    font-size: 2vh;
+}
+
+.ingredient-name {
+    margin: 0;
+    padding: 0.8vh 0.8vh 0.8vh 0;
+    font-size: 2.5vh;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    text-transform: capitalize;
+}
+
+.instructions {
+    margin-left: 1.5vh;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.optional-text {
+    position: relative;
+    left: 0.5vw;
+}
+
+.mat-list.directions {
+    margin-bottom: 10vh
+}
+
+.mat-line.steps {
+    padding: 5px 0 5px 0;
+}
+
+.mat-line.intructions-container {
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    height: 100%;
+}
+
+.step-icon {
+    border: 1px solid #3f51b5;
+    border-radius: 15px;
+    padding: 3px 8px 3px 8px;
+    background: #3f51b5;
+    font-size: 13px;
+    color: white;
+    position: top;
+    position: relative;
+    bottom: 2px;
+}
+

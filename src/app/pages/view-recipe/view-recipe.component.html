@@ -1,0 +1,67 @@
+<div class="page-container">
+    <div *ngIf="isLoading; else showContent;">
+        <mat-spinner class="spinner-preloader"></mat-spinner>
+    </div>
+    <ng-template #showContent>
+        <app-view-recipe-header [data]="data"></app-view-recipe-header>
+        <div class="content">
+            <mat-accordion>
+                <mat-expansion-panel class="ingredients-container">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <span class="expansion-icon">
+                                <mat-icon>list</mat-icon>
+                            </span>
+                            <span class="expansion-title"><b>Ingredients</b></span>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-list *ngFor="let ingredient of data.ingredients">
+                        <mat-list-item>
+                            <mat-icon mat-list-icon color="primary">layers</mat-icon>
+                            <div mat-line>{{ ingredient.amount }} {{ ingredient.measurement }}</div>
+                            <div mat-line>
+                                <p class="ingredient-name">{{ ingredient.name }}</p>
+                            </div>
+                            <div mat-line *ngIf="ingredient.specials">
+                                <div matRipple class="specials-container" *ngIf="ingredient.specials.title" (click)="openSpecials(ingredient.specials)">
+                                    <b class="specials-title">{{ ingredient.specials.title }}</b>
+                                    <mat-icon color="warn">whatshot</mat-icon>
+                                </div>
+                            </div>
+  
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                    </mat-list>
+                </mat-expansion-panel>
+            </mat-accordion>
+
+            <mat-accordion>
+                <mat-expansion-panel class="directions-container">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <span class="expansion-icon">
+                                <mat-icon>room_service</mat-icon>
+                            </span>
+                            <span class="expansion-title"><b>Directions</b></span>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-list class="directions" role="list" *ngFor="let direction of data.directions; let i = index">
+                        <mat-list-item role="listitem">
+                            <div mat-line class="steps">Step
+                                <span class="step-icon">{{ i + 1 }}</span>
+                                <span class="optional-text" *ngIf="direction.optional">(Optional)</span>
+                            </div>
+                            <div mat-line class="intructions-container">
+                                <p class="instructions">{{ direction.instructions }}</p>
+                            </div>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <br>
+        <mat-label>Last Edited: {{ data.editDate}}</mat-label>
+        <br>
+        <br>
+    </ng-template>
+</div>

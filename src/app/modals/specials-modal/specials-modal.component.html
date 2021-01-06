@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+    <p>{{ data.text }}</p>
+    <p *ngIf="data.code">
+        CODE: <b>{{ data.code }}</b>
+    </p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button cdkFocusInitial (click)="onClose()" color="primary">Ok</button>
+</div>

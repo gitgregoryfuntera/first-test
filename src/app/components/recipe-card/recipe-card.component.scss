@@ -1,0 +1,38 @@
+.card {
+    max-width: 100vw;
+    margin-bottom: 2vh;
+}
+
+.list-container {
+    height: 90%;
+    width: 100%;
+    margin-left: 1vw;
+    .title {
+        margin: 0;
+    }
+    .description {
+        color: #3f51b5;
+        cursor: pointer;
+    }
+    .description:hover {
+        text-decoration: underline;
+    }
+}
+
+.detail-container {
+    width: 100%;
+    height: 90%;
+    border-left: 1px solid #ccc;
+    .detail {
+        cursor: pointer;
+        margin-left: 1vh;
+        p {
+            display: inline;
+            color: #ccc;
+        }
+        span {
+            position: absolute;
+            right: 0;
+        }
+    }
+}
